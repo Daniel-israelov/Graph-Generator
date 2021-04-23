@@ -1,13 +1,13 @@
 # Graph-Generator
-C++ program to create Random Graphs according to a given vector of probabilities --> 3 different vectors for 3 deffierent attributes.
+C++ program to create Random Graphs according to a given Arrays of probabilities --> 3 different Arrays for 3 deffierent attributes.
 
-Values in the vector are chosen accroding to thresholds:
+Values in the Array are chosen accroding to thresholds:
 
 Threshold1 = Threshold3 = ln(v)/v.
 
 Threshold2 = sqrt(2*threshold1).
 
-Each vector has 10 values --> 5 values are smaller then the threshold & the other 5 are larger.
+Each Array has 10 values --> 5 values are smaller then the threshold & the other 5 are larger.
 
 After creating a graph it will check 3 attributes:
 1. Connectivity (att_indx = 1) --> Chekcs how many graphs are connected.
