@@ -12,7 +12,7 @@ int diameter(Graph*);
 void code_execution(double[], int);
 void create_csv(int[], double[]);
 
-/* MAIN */
+/* Driver Code */
 int main()
 { 
 	srand((unsigned)time(NULL));
