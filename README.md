@@ -1,5 +1,5 @@
 # Graph-Generator
-C++ program to create Random Graphs according to a given Arrays of probabilities --> 3 different Arrays for 3 deffierent attributes.
+C++ program to create Random Graphs according to a given Arrays of probabilities --> 3 different Arrays for 3 different attributes.
 
 Values in the Array are chosen accroding to thresholds:
 
