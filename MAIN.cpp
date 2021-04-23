@@ -27,7 +27,7 @@ int main()
 	return 0;
 }
 
-void code_execution(double p_arr[], int att_indx) //att_indx helps to identify which attribute needs to be checked (To avoid duplicating code).
+void code_execution(double p_arr[], int att_indx) //att_indx helps to identify which attribute needs to be checked.
 {/*  This function executes all other functions needed to create random graphs  
 	 and to check the Attributes.											     
 	 At the end of this function there's a function call to create the csv file 
