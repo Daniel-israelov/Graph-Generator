@@ -5,12 +5,10 @@
 #define P_CYCLE 500  //# of graphs for each probabilty
 using namespace std;
 
-/*=========== Requested Functions =============*/
 Graph* build_random_graph(int, double);
 int is_isolated(Graph*);
 int connectivity(Graph*);
 int diameter(Graph*);
-/*=========== Extra Functions =================*/
 void code_execution(double[], int);
 void create_csv(int[], double[]);
 
@@ -30,12 +28,10 @@ int main()
 }
 
 void code_execution(double p_arr[], int att_indx) //att_indx helps to identify which attribute needs to be checked (To avoid duplicating code).
-{/* |----------------------------------------------------------------------------|
-	| This function executes all other functions needed to create random graphs  |
-	| and to check the Attributes.											     |
-	| At the end of this function there's a function call to create the csv file |
-	| with all the calculations and the results.							     |
-	|----------------------------------------------------------------------------|	*/
+{/*  This function executes all other functions needed to create random graphs  
+	 and to check the Attributes.											     
+	 At the end of this function there's a function call to create the csv file 
+	 with all the calculations and the results. 	*/
 
 	Graph* G;
 	int i, attribute_v[10] = { 0 }; // attribute_v --> counts how many graphs are maintaining the current attribute
@@ -66,15 +62,14 @@ void code_execution(double p_arr[], int att_indx) //att_indx helps to identify w
 }
 
 void create_csv(int attribute_v[], double p_arr[])
-{ /* ----------------------------------------------------------------------
-	 | Funtion to create a CSV file with the results of all Attributes.	  |
-	 | All tables will be printed to the same single CSV file and will	  |
-	 | be separated with an empty line and will be printed in blocks	  |
-	 | in the following order:											  |
-	 | 1st block --> Attribute 1 - Connectivity.						  |
-	 | 2nd block --> Attribute 2 - Diameter.							  |
-	 | 3rd block --> Attribute 3 - Isolated vertex.						  |
-	 ----------------------------------------------------------------------		*/
+{ /* Funtion to create a CSV file with the results of all Attributes.
+	 All tables will be printed to the same single CSV file and will
+	 be separated with an empty line and will be printed in blocks
+	 in the following order:
+	 1st block --> Attribute 1 - Connectivity.
+	 2nd block --> Attribute 2 - Diameter.
+	 3rd block --> Attribute 3 - Isolated vertex.		*/
+	
 	ofstream file;
 	int i;
 
@@ -95,12 +90,10 @@ void create_csv(int attribute_v[], double p_arr[])
 }
 
 int diameter(Graph* G)
-{/* |--------------------------------------------------------------------------------|
-    | Here we use both BFS and the Distance array to find the diameter of a graph.	 |
-    | We first run BFS from vertex 0 to check if the graph is connected, if not then |
-    | there's no need to continue the BFS with other vertices.						 |
-    | If the Graph is connected then we run BFS from each vertex in the graph.		 |
-    |--------------------------------------------------------------------------------|	 */
+{/* Here we use both BFS and the Distance array to find the diameter of a graph.
+    We first run BFS from vertex 0 to check if the graph is connected, if not then
+    there's no need to continue the BFS with other vertices.
+    If the Graph is connected then we run BFS from each vertex in the graph.	 */
 
 	int i, j, diam = -1;
 	i = j = 0;
@@ -125,11 +118,10 @@ int diameter(Graph* G)
 }
 
 int connectivity(Graph* G)
-{/* ---------------------------------------------------------------------------------
-	| Using BFS one time to check if theres a path from node '0' to all other nodes.|
-    | If not --> the graph is not connected and will return 0,						|
-	| else - connected and will return 1.											|
-	---------------------------------------------------------------------------------	*/
+{/* Using BFS one time to check if theres a path from node '0' to all other nodes.
+    If not --> the graph is not connected and will return 0,
+	else - connected and will return 1.	*/
+
 	G->BFS(0);
 	for (int i{}; i < V; i++)
 		if (G->GetVisited(i) == false)
@@ -138,12 +130,10 @@ int connectivity(Graph* G)
 }
 
 int is_isolated(Graph* G)
-{/* |----------------------------------------------------------------------------------------|
-	| Finding if there's at least 1 isolated vertex by checking the degrees of the vertices. |
-	| As soon as we find a vertex with degree = 0 we know that there's at least 1 isolated 	 |
-	| vertex and the function will return 1, else - there are no isolated vertices and the 	 |
-	| function will return 0.																 |
-	|----------------------------------------------------------------------------------------|	 */
+{/*	Finding if there's at least 1 isolated vertex by checking the degrees of the vertices.
+	As soon as we find a vertex with degree = 0 we know that there's at least 1 isolated
+	vertex and the function will return 1, else - there are no isolated vertices and the
+	function will return 0.		 */
 
 	for (int i{}; i < V; i++)
 		if (G->GetDegree(i) == 0) //If deg(v) = 0 --> that vertex is isolated
@@ -152,10 +142,8 @@ int is_isolated(Graph* G)
 }
 
 Graph* build_random_graph(int v, double p)
-{/*	----------------------------------------------------------
-	| Function that generates Random graph with 'v' vertices |
-	| and adding edge with the probabilty of 'p'.			 |
-	----------------------------------------------------------	*/
+{/* Function that generates Random graph with 'v' vertices
+	and adding edge with the probabilty of 'p'.	*/
 
 	Graph* G = new Graph();
 	int i = 0, j = 1;
