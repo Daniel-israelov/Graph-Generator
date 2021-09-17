@@ -17,7 +17,7 @@ int main()
 { 
 	srand((unsigned)time(NULL));
 	double p1[10] = { 0.003,0.004,0.005,0.0055,0.006,0.007,0.0075,0.008,0.0085, 0.009 };	 //Probabilities vector for threshold1 --> ~0.00690
-	double p2[10] = { 0.075,0.08,0.085,0.095,0.1,0.13,0.18,0.23,0.28,0.33 };			     //Probabilities vector for threshold2 --> ~0.11753
+	double p2[10] = { 0.075,0.08,0.085,0.095,0.1,0.13,0.18,0.23,0.28,0.33 };		 //Probabilities vector for threshold2 --> ~0.11753
 	double p3[10] = { 0.0048,0.0053,0.0058,0.0063,0.0068,0.0073,0.0078,0.0083,0.088,0.093 }; //Probabilities vector for threshold3 --> ~0.00690
 
 	code_execution(p1, 1); //For Attribute 1 --> Connectivity
