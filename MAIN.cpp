@@ -29,9 +29,9 @@ int main()
 
 void code_execution(double p_arr[], int att_indx) //att_indx helps to identify which attribute needs to be checked.
 {/*  This function executes all other functions needed to create random graphs  
-	 and to check the Attributes.											     
-	 At the end of this function there's a function call to create the csv file 
-	 with all the calculations and the results. 	*/
+     and to check the Attributes.											     
+     At the end of this function there's a function call to create the csv file 
+     with all the calculations and the results.  */
 
 	Graph* G;
 	int i, attribute_v[10] = { 0 }; // attribute_v --> counts how many graphs are maintaining the current attribute
@@ -63,12 +63,12 @@ void code_execution(double p_arr[], int att_indx) //att_indx helps to identify w
 
 void create_csv(int attribute_v[], double p_arr[])
 { /* Funtion to create a CSV file with the results of all Attributes.
-	 All tables will be printed to the same single CSV file and will
-	 be separated with an empty line and will be printed in blocks
-	 in the following order:
-	 1st block --> Attribute 1 - Connectivity.
-	 2nd block --> Attribute 2 - Diameter.
-	 3rd block --> Attribute 3 - Isolated vertex.		*/
+     All tables will be printed to the same single CSV file and will
+     be separated with an empty line and will be printed in blocks
+     in the following order:
+     1st block --> Attribute 1 - Connectivity.
+     2nd block --> Attribute 2 - Diameter.
+     3rd block --> Attribute 3 - Isolated vertex.  */
 	
 	ofstream file;
 	int i;
@@ -101,7 +101,7 @@ int diameter(Graph* G)
 	G->BFS(0);
 	for (i = 0; i < V; i++)
 		if (G->GetVisited(i) == false)// Meaning that the graph isn't connected and there's no need to continue BFS on all other vertices.
-			return diam;			  // -1 represent INFINITY diameter
+			return diam;	      // -1 represent INFINITY diameter
 
 	for (i; i < V; i++) //Getting the diam value from BFS(0)
 		if (diam < G->GetDistance(i))
@@ -120,7 +120,7 @@ int diameter(Graph* G)
 int connectivity(Graph* G)
 {/* Using BFS one time to check if theres a path from node '0' to all other nodes.
     If not --> the graph is not connected and will return 0,
-	else - connected and will return 1.	*/
+    else - connected and will return 1.	*/
 
 	G->BFS(0);
 	for (int i{}; i < V; i++)
@@ -142,8 +142,8 @@ int is_isolated(Graph* G)
 }
 
 Graph* build_random_graph(int v, double p)
-{/* Function that generates Random graph with 'v' vertices
-	and adding edge with the probabilty of 'p'.	*/
+{  /* Function that generates Random graph with 'v' vertices
+      and adding edge with the probabilty of 'p'.	*/
 
 	Graph* G = new Graph();
 	int i = 0, j = 1;
